@@ -72,7 +72,7 @@ helm install --create-namespace --namespace harbor harbor harbor/harbor --values
 ```
 
 ```sh
-helm upgrade --namespace harbor harbor harbor/harbor --values sto1/harbor/harbor.yaml
+helm upgrade --namespace harbor harbor harbor/harbor --reuse-values
 ```
 
 ### Gitea service
@@ -88,7 +88,7 @@ helm install --create-namespace --namespace gitea gitea gitea-charts/gitea --val
 ```
 
 ```sh
-helm upgrade --namespace gitea gitea gitea-charts/gitea --values sto1/gitea/values.yaml
+helm upgrade --namespace gitea gitea gitea-charts/gitea --reuse-values
 ```
 
 ## sto2
@@ -132,3 +132,5 @@ kubectl apply -f sto2/minio/minio.yaml
 ```sh
 kubectl minio proxy -n minio-operator
 ```
+
+The operator automatically updates the deployment with the newest stable versions.
