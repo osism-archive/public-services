@@ -1,16 +1,7 @@
 import os
+
+from github import Github
 import requests
-import sys
-import yaml
-
-
-class Mirrors:
-    def __init__(self, file: str) -> None:
-        with open(file, 'r') as stream:
-            try:
-                self.list = yaml.safe_load(stream)
-            except yaml.YAMLError as exc:
-                print(exc)
 
 
 class GiteaSettings:
@@ -28,10 +19,16 @@ class GiteaSettings:
 
 
 class GitHubSettings:
-    def __init__(self, github_pat: str, github_repos: list, gitea_conf: GiteaSettings) -> None:
+    def __init__(self, github_pat: str, github_organization: str, gitea_conf: GiteaSettings) -> None:
         self.pat = github_pat
-        self.repo_list = github_repos
         self.gitea_conf = gitea_conf
+        self.org = github_organization
+
+    def get_repos(self) -> dict:
+        g = Github(self.pat)
+        organization = g.get_organization(self.org)
+        repos = organization.get_repos(type="all")
+        return repos
 
     def mirror(self, payload: dict) -> None:
         requests.post(
@@ -41,29 +38,23 @@ class GitHubSettings:
             json=payload,
         )
 
-    def get_payload(self, repo_url: str) -> dict:
-        # repo_name: turn "https://github.com/osism/release.git" into "release"
+    def get_payload(self, repo) -> dict:
         payload = {
             "service": "github",
             "auth_token": self.pat,
-            "clone_addr": repo_url,
+            "clone_addr": f"https://github.com/{self.org}/{repo.name}",
             "mirror": True,
-            "private": False,
-            "repo_name": repo_url.split('/')[-1].split('.')[0],
+            "private": repo.private,
+            "repo_name": repo.name,
             "repo_owner": self.gitea_conf.owner,
         }
         return payload
 
     def mirror_repos(self):
-        for repo in self.repo_list:
+        for repo in self.get_repos():
             payload = self.get_payload(repo)
             self.mirror(payload=payload)
 
-
-# Config file
-mirrors = Mirrors(
-    file=sys.argv[1],
-)
 
 # Gitea configuration
 gitea_conf = GiteaSettings(
@@ -76,7 +67,7 @@ gitea_conf = GiteaSettings(
 # GitHub mirroring
 github_handle = GitHubSettings(
     github_pat=os.environ.get("GITHUB_PAT", ""),
-    github_repos=mirrors.list['github'],
+    github_organization=os.environ.get("GITHUB_ORGANIZATION", "osism"),
     gitea_conf=gitea_conf,
 )
 github_handle.mirror_repos()
