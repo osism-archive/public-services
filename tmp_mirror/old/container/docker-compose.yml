@@ -1,0 +1,14 @@
+services:
+  container_registry:
+    image: registry:latest
+    platform: linux/amd64
+    volumes:
+      - "./data:/var/lib/registry"
+    networks:
+      - registry_net
+
+networks:
+  registry_net:
+    driver: bridge
+    driver_opts:
+      com.docker.network.driver.mtu: 800

@@ -1,0 +1,79 @@
+services:
+  aptly:
+    image: urpylka/aptly:latest
+    platform: linux/amd64
+    volumes:
+      - "./data_aptly:/opt/aptly"
+    networks:
+      - mirror_net
+  bandersnatch:
+    image: pypa/bandersnatch:latest
+    platform: linux/amd64
+    volumes:
+      - "./bandersnatch.conf:/conf/bandersnatch.conf"
+      - "./data_bandersnatch:/srv/pypi/web"
+    networks:
+      - mirror_net
+    command:
+      - "python"
+      - "/bandersnatch/src/runner.py"
+      - "--force-check"
+      - "true"
+      - "3600" # hourly
+  banderctl:
+    image: banderctl
+    platform: linux/amd64
+    build:
+      context: ./banderctl
+    volumes:
+      - "./bandersnatch.conf:/bandersnatch.conf"
+    networks:
+      - mirror_net
+    command:
+      - "uvicorn"
+      - "app.main:app"
+      - "--host"
+      - "0.0.0.0"
+      - "--port"
+      - "80"
+      - "--root-path"
+      - "/banderctl"
+  container_registry:
+    image: registry:latest
+    platform: linux/amd64
+    volumes:
+      - "./data_container_registry:/var/lib/registry"
+    networks:
+      - mirror_net
+  wormhole:
+    image: ghcr.io/tibeer/wormhole:latest
+    volumes:
+      - "./data_wormhole:/mirror"
+    networks:
+      - mirror_net
+    command:
+      - "uvicorn"
+      - "app.main:app"
+      - "--host"
+      - "0.0.0.0"
+      - "--port"
+      - "80"
+      - "--root-path"
+      - "/wormhole"
+  nginx:
+    image: nginx:latest
+    platform: linux/amd64
+    volumes:
+      - "./data_bandersnatch:/data/pip:ro"
+      - "./data_wormhole:/data/ansible:ro"
+      - "./nginx.conf:/etc/nginx/nginx.conf:ro"
+    ports:
+      - "80:80"
+    networks:
+      - mirror_net
+
+networks:
+  mirror_net:
+    driver: bridge
+    driver_opts:
+      com.docker.network.driver.mtu: 1400

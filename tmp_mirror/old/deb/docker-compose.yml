@@ -1,0 +1,8 @@
+services:
+  aptly:
+    image: urpylka/aptly:latest
+    platform: linux/amd64
+    volumes:
+      - "./data:/aptly"
+    ports:
+      - "40080:80"
