@@ -40,10 +40,12 @@
       jobs:
         - ansible-lint
         - yamllint
+        - flake8
     gate:
       jobs:
         - ansible-lint
         - yamllint
+        - flake8
     #periodic-daily:
     #  jobs:
     #    - update-gitea-mirrors
