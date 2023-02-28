@@ -1,7 +1,8 @@
-- hosts: all
+- name: Ensure-pip
+  hosts: all
   roles:
     - role: ensure-pip
   tasks:
-    - name: install python packages
+    - name: Install python packages
       ansible.builtin.pip:
         requirements: "{{ ansible_user_dir }}/{{ zuul.project.src_dir }}/requirements.txt"
