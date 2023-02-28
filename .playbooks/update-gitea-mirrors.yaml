@@ -15,3 +15,4 @@
       environment:
         GITEA_GITHUB_PAT: "{{ mirror_creds.GITEA_GITHUB_PAT }}"
         GITEA_TOKEN: "{{ mirror_creds.GITEA_TOKEN }}"
+      changed_when: true
