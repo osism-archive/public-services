@@ -2,16 +2,26 @@
 - name: Mirror all GitHub repositories of one organization to gitea
   hosts: all
   tasks:
+    - name: Install Python
+      ansible.builtin.include_role:
+        name: "{{ item }}"
+      loop:
+        - ensure-python
+        - ensure-pip
+
     - name: Install PyGithub
       ansible.builtin.pip:
-        name: PyGithub
+        name:
+          - PyGithub
+          - requests
 
     - name: Ensure all mirrors are configured
       no_log: true
-      ansible.builtin.command:
-        cmd: python3 scripts/mirror.py
+      ansible.builtin.script:
+        cmd: scripts/mirror.py
       args:
         chdir: "{{ zuul.project.src_dir }}"
+        executeable: python3
       environment:
         GITEA_GITHUB_PAT: "{{ mirror_creds.GITEA_GITHUB_PAT }}"
         GITEA_TOKEN: "{{ mirror_creds.GITEA_TOKEN }}"
