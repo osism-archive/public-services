@@ -23,6 +23,6 @@
         chdir: "{{ zuul.project.src_dir }}"
         executeable: python3
       environment:
-        GITEA_GITHUB_PAT: "{{ mirror_creds.GITEA_GITHUB_PAT }}"
+        GITHUB_PAT: "{{ mirror_creds.GITHUB_PAT }}"
         GITEA_TOKEN: "{{ mirror_creds.GITEA_TOKEN }}"
       changed_when: true
