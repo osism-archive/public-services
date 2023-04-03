@@ -1,37 +1,36 @@
 ---
-#- secret:
-#    name: gitea-mirror
-#    data:
-#      GITEA_GITHUB_PAT: !encrypted/pkcs1-oaep
-#        - Yuf+f/gTs/xAzI5ROPx8kYJIzRXaqyBWtJ2YruMNICvp+CowOsnkVAsfUYY+ZGQ7Sx9Nl
-#          jtnaoYoF7O8RMS7roc8hI05fNMSNlFDZ/aa1o6L1e9QOrU0sn5Le2NdZbQP71HpydNPw1
-#          MKU8IDrZ8lcb4IwsYeu4fFivVC+Cw+PeuOZBBdnCv5UtUW+nstlvqM1k2zJi0RcIHd38k
-#          QlGVZIv7Pw240UdQrHUE4jk6wPXQ5DXpwWGNj96809dqSAc35MSb3K7WdP0x/XipLl2mB
-#          XlhGFzq4ee8P6V6YulkK5OmEzBQgzyC3ipGgTBVuIdg40vvIuRzyA3VX2XYRvdbjddFnH
-#          7hShznJVpuqMOry4u6M/6XRrN/sRpTI58valseOlshUfiIv/QYnZ+TuoJ475yKx8ryymj
-#          YTRDyV8uD9w1C8b8gf1vMEiuLf8lYnzXBPRHD4FwTfCygdkF6pfX6cK7DTes/oOFMJR48
-#          7YHNdngaIzJlo8lLv6/LgCgTTWI/0qZ+6OeL4eGnXIeOqVkMwn/NyRVIvWJItk5lGT6oC
-#          DC+Q27NDzX96rvjKOUCg1IOmc0Vu1xJ/bL8+/MBGrd5W4gS1l16DSp+Zsct9qG2hPGa3x
-#          BzgVlyZzQQFAfaIqJ6sEZKhY73AlVah5IgF6b6+9M5ST7u95T0+0Re4PQZ7gOI=
-#      GITEA_TOKEN: !encrypted/pkcs1-oaep
-#        - DQPaLbn6uROgTLxUQfmwC9faYiQONl001NjenhjJ1cJDRvVNh3F5CuO4rlllA4pquNSDY
-#          WHbpoh923i6mP1t5IuAEMpzkmyp699fscMEkASCHFlr6WInjg/hPdTel60JDOGlOEhJUR
-#          d7aotC9Od3n3jy/5IuhnGO1U6lKhPfkmaCBlhH6f/ihBCjXFMmW7JW+ljQhaRWV+AtyK0
-#          lsvotSvXOq8EJaJDkHDX420MvEW4dg6qog5x3lGjoXmhcdFWkYOZCR5mrHu00yOAZAe9D
-#          mG0Dgle/PAGezjgfY0xTvetF47td9WGPk1yYP5/HfXOsaSam40OghKbpfeSvb52snBbiT
-#          i7RIBpxFNAV5B5jy8XLM3MILfOyDMSgd8WHfrLTgLkqvfKrQhOTbH+jOOeZD8PJ4f+kIz
-#          nenI12XAKNiHx1OlvamxSz3sHQYMkVYEMOmNYhyPxUL53xGnlItiBZ0rtV9YxSxakj9Af
-#          brD6t6GOL8tzlQdIkL8MBpbAzc1pU3ninFy78O2wSLY38oDen+QYUD0/kp/5Q3F1ttd45
-#          NAdJEWAcjfS3LvRAaQWa/UC8lyNmbYc/G90a3hJGTIML2R7DJRa7rzOiqsv/VgupgW8YP
-#          cAsQwsDzxjSh4i2d8JymEWjYLDvIbjJX3PvUdIbkw4RtI8gpgR9I5DUCHm99Kk=
-#      
-#- job:
-#    name: update-gitea-mirrors
-#    pre-run: .playbooks/pre.yaml
-#    run: .playbooks/update-gitea-mirrors.yaml
-#    secrets:
-#      - name: mirror_creds
-#        secret: gitea-mirror
+- secret:
+    name: gitea-mirror
+    data:
+      GITHUB_PAT: !encrypted/pkcs1-oaep
+        - JAy6U3/fVjiQSeKGfK6PypeRQuEf9MLkEZuRjOvyQcXarIfYVTd07EDklunsUahhkM4rn
+          VHMqATQwxlo2aqQHAYH51sY5zK6QddKtGaoVraDlkWH/blhQR3J6fr2VvHeThzxifWIi4
+          0cPI51Ms8PvshJTrljbBlbRYiA0fm6+y3g1Fwjl1zq381JPsKGg+lEmGC54Lc1bgfz/Mk
+          EosQHQ7Fw+syVqwr28N1tyJUiyZ/nuuKJvxgCDCTJqRoJLCs9tmkyps5xcHfaS0ckzCWz
+          WGa/0dNH8ai5kDPNNOq/mt8FGm0Y9CEJe+b0mR20HurRVeBRK8CfnZI5v7kROtmW29g97
+          G1Uy9F/mWhoF0xHT27+FLjn8GXZjDnLDYTqfDIi3iQ76M0AVNZXHBccMTvDl01Z+r/feM
+          pqpdG7ZDBsHTuyJk7Qq390KSHADOn4WqEz/IsIMmXuCxiOp1b5Ukn6+8s4mska4g0rkgC
+          wwwB0pWjQa3GEIQmnWbjqdMM8lS2JotuTP5eo3SUlds+Ay/mkziG/q58NfYJSOiyvPFgI
+          AvrpBBO2pyWfb2jpQQIR3kS9Gavr/cOm5mGtscDmz/ocEr9fDA52WDdD2ylFooy9VJeqe
+          1ufuGhdDryQi+IT/4XQAtFlY4qPdLq7/dcb2nw4qP4W4Qut8xmzqiubiKJT3fU=
+      GITEA_TOKEN: !encrypted/pkcs1-oaep
+        - GaZmzyM83ZP4slW1f4ddX5rLiuNAdnqjI+K4xTPr2UPJF1HxsI7trkA/8kWYfN6DpzybS
+          vISA1dGERtnKbzsf7WVIAt97MyAGnozQVeT50NiQOPf5JR8gddnO2ADZUGGUaURGMb5sR
+          zwRvh1PUOosJB9isPH4yQjy2Hw6RLLMP2O3INOR8Fdt0mzXlg1ynWunwcyTnsG6HnNDDW
+          6FY1hRhGFgVqJ1w8qhJvGqwYpp9PSldsEzTPiJJakSQgH4UpVLnX1Jxjp9zqBDxbL9HJC
+          FG33LDt+e3XcmcnaubVautNpdG8Nf5/R9/pCYV+ozYZaH7oULyTR7PO1b1DLxk2tOMWx7
+          swgDq9UrJ3/WN1zS+FxS0TaJ+L14ckXWEUvdFccAIGOKT6AUivNf1xAqdpAlygEUfT9Z/
+          1uTOIonhdl2B01uQrxupuW1mLeYDycsvB+tUUwP8mP4NKyluYYYHbt3wucuuAFRdnrSMD
+          FOpHgL5hCeFkCQ1OreuZ1sDrtt+KjlxdHEaxiA9int5asPMwRrULYtGJVcgWV0TlabxVE
+          1Eu14+E27o0ISMoUOpMw4UxPkob+ztWOqGIii95t1Mv+8sbKKG0WbGP58z9CAbnfSoVcB
+          VRAdEL9n/bAo4Dmx/QaqvSERatEj31dhmOpzuuluM01en2A+S113oYnfd888vY=
+      
+- job:
+    name: update-gitea-mirrors
+    run: .playbooks/update-gitea-mirrors.yaml
+    secrets:
+      - name: mirror_creds
+        secret: gitea-mirror
 
 - project:
     merge-mode: squash-merge
@@ -46,6 +45,6 @@
         - ansible-lint
         - yamllint
         - flake8
-    #periodic-daily:
-    #  jobs:
-    #    - update-gitea-mirrors
+    periodic-hourly:
+      jobs:
+        - update-gitea-mirrors
