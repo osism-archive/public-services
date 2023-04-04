@@ -20,7 +20,6 @@
       ansible.builtin.script:
         cmd: ../scripts/mirror.py
       args:
-        chdir: "{{ zuul.project.src_dir }}"
         executable: python3
       environment:
         GITHUB_PAT: "{{ mirror_creds.GITHUB_PAT }}"
