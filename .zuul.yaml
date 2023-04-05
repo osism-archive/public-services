@@ -3,27 +3,27 @@
     name: gitea-mirror
     data:
       GITHUB_PAT: !encrypted/pkcs1-oaep
-        - Gti1XT1F7r4npN1YNaVpHQzt4Q3yFbSqJNZ5p4hS3pooo53gDRGxAlxOHVi9uFuLu8499
-          lF/eYTWpZVORW5kccwM/6YO3u5fDUpNnM5SfVgv4+sBjVo7G/lyyF0mChxAUMNTG2eKQj
-          9rC0qV/WA+8haPm0WCjeQ/pkrWeUIs7d7KWnYiw0uPHLStOioXweYsbZlgw9WccKkkJVG
-          DXuo9XWbi1Z1eiQZiSCQ8PdBKMbYggIbWlmB6gH9lAiXMjUTsT7FMmmRw9PGE5E9I2Txd
-          FsOBSKI4oQMGojkI+OaZu3V0VGGeaIkr7N4WRnc+FZejI2aMMrBs9TZW2tOfEQaP7DMNT
-          CQ5UTzdUQIXMv/Hhl5eg98k87kmj0ZN500q9A7YRp8nUqYU0b2n2lQCJt0Q8XDGqVjpJW
-          IG/c8QoK89+z7oy/SgSrsw7RGUB97j4O6cK/yI1Aneqn8/3aSbKXF9U8Qcn2SI1qIF/ee
-          bB7YwpszXrmhRaTAx0lApdgh0GgeExsUdz1p3MJb3JdBSZap2llAhlVsmIc6x/lheREzZ
-          2Bdm12kz+LB+db+SYWpvcVHYUISi9Ddb09RyY/z2ipFvIqv84RtHz/hJUn+cNEzHgcobe
-          YKm3chhcza4b2bcFBL/tZeu3ktNmkOjkTUTKGlotXZ7SVUDudQOdPeP9dSdlcM=
+        - b1/eMFfwU59vm0Oxz+RU5Krl1dyLLA6UQXFxHXGi87Wke79JPKIOS7GTIvLv3oE3glCtV
+          h94ge1Yy/ffqHhjBOBQfFOIl3btWVRjEteM/wM/xIsBoz3E7AKsKK4NfZR7myhy0Esjdb
+          juPaMCn03AZWJbW1h0SPbkQFninIbnCmFMXE/8r4AsgakRPxY5XdPkj4XaWAcatk45fLJ
+          zUwLwZBqmgSZmSSUaGsKZs/r1a+blBn6FFufJln9Mc+rEevUpjP9Q8XbhKqouciY+4/u9
+          QWKl82p/UJreMd78bOuCPWpQT/Kq10wmhnbjufVSh5T+k5wlkQF1Jf63mtnPGCYpqbsJx
+          ThxVqVv2m/OHuxzgVXD/5MqI3SjdHgVx9y3aPZkJ+8D77+VpeyPp+yD3STZ1c+xzSi8TQ
+          9g71D1xc3CxaGgNoZ9qb7du2KieqQdHzSDjpia0OdujmdZASca5pGgoXjQsfmXS63CRS7
+          StoiMPV/s2Qda+KQuRXX0jYp0hfgOA53X9uxC7wtQORz3KyYHN8HxvPI0mq24/MXASfTG
+          VJoU95TWKUOPxTGqDhAsXucLxzpFobh4yx8MqVtMhbuxD+TMKr8Pn7Euail/OWjNVUWzQ
+          Ru0FotFJ+PZqZDeV15IqxsZsM7Zo0YSJNa5gtxNY7e+LKMyXUl23pCB4iqENak=
       GITEA_TOKEN: !encrypted/pkcs1-oaep
-        - Yk8B7CrKvd6hE9FRpqLYhMuoYXSJ29XLOaV3T0JqOmVFP26EywF7ymMkXfrXJPwwyMKgJ
-          KQiY9VhppdKRp3ham4KPtWIFx6YTMVvBSrO7ic6jX5sAiQUl/neAvQNLJYyaDU16dG4r3
-          hkWYP9dOQ4fanFSk9ZBZrd3mbSzTOXgAdLR+mIy6LgkXnE0RitRUSgspe7a6/ItKIDLwo
-          zMK3Ep5MD5uXCbUQLplvZQamBBAtsDS5+H2KJCGbFA7qmm9RGWqZ4XQV7jOdfFXL62hAJ
-          wrmbPYMPJDTLjXC0Z1to+RMgi3OyO9D/QHagVvKVQa9AfYZIyyE5Kgv8Bgd23FAifnO57
-          AbQVBxRMqpvicqVeivHOcZ1wUehi4pvv+MbTziGvSfmbe9YItHfzlJVnnGswTytJ9oo6q
-          PtOphORamVEQ95Pok/v3pAFI0495Y3f4q5LlZAiCsBUgPhnfF8LJ7xDYizDf0CJYjk9n+
-          Vt9nrBS7No8718mBYAINFpu2OtkHAFdHgMWCPo0DHMRDWOfA3ypyhoHBwoy25WIe///4I
-          9cXI/ebq41zDQVKWaFPpYPVRmRuK/TtL67HGuFRN3rIiza/mMdgDY8Ar2RZAf+2gkVwp7
-          CzV41XEVoZjl8B4uLNDFJEkaqkwS4kF747uD73e+tGtqzVDIahTepdxmRBPFoM=
+        - Go/MjB69VVaYOEcZD1Ml1hnEOC0nxOcnP4Ff4zMcr6QKoLd3tFA6ZU2/IffmGvXheTP78
+          GWO5o9mmiKlkUxXGK39hPdywwqS9cj8Jwi2AUg3HVc0zDBtt/NEay9GM4agDPqOFknorQ
+          qLDWKgDzB44ze7jLquOm+0hWw+EZ4y6X0/cgYoZr806hCEb7y8ha3I41pOQlRtKwT/Dlk
+          fs2OKiJz4UudKoLdBmR+pwtCLMsSL8TjJRY6AGVouVhmIUdR+dB0giXID5LYuB+xfJuUh
+          MBafHaPO0xz9SwQzi92omHpA+GVB+E9fvsaUnd1lB0gJQfx5wpUQWbwZuMzbinH7KTMV4
+          Lcr6p0Eo8KOmetCg3DmoOAdppT9XrvVWOJk3mZ0131G9khbBsH1Vub5uId16mykZGOIGz
+          fg2wcqlG1A2XnMhRRBLn4cgehc8LWJHf93Lln6lA4mUZ8E3PltlqNCiCr0ox77XJmxwkp
+          mlOz6rOm7xPRUkxhs8eI7nj3zQONqpFCnVIyckoSvxVUxCyIgdqLiQNpP7cX6lg2IwIxu
+          If3m+5j2aPCbZfktIj+O8ktTrGQR6HLByGDHWFpbQZ0wRZF3QCFikND6QTqtFDzkAgTTA
+          FgZpF1+bwL8BTyJA/hw6qHHGOQAEB19fCWYKr+hXfqP59465FbGdvOjNwuu61c=
       
 - job:
     name: update-gitea-mirrors
