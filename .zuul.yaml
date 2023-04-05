@@ -38,13 +38,16 @@
     check:
       jobs:
         - ansible-lint
-        - yamllint
         - flake8
+        - yamllint
     gate:
       jobs:
         - ansible-lint
-        - yamllint
         - flake8
+        - yamllint
     periodic-daily:
       jobs:
+        - ansible-lint
+        - flake8
         - update-gitea-mirrors
+        - yamllint
